@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .section {
+            width: 30%;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .media {
+            width: 100%;
+        }
+
+        .buttons {
+            margin-top: 10px;
+        }
+
+        .button {
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Upper Section - Pictures -->
+        <div class="section">
+            <img class="media" src="image1.jpg" alt="Image 1">
+            <div class="buttons">
+                <button class="button" onclick="changeImage('image1.jpg')">Button 1</button>
+                <button class="button" onclick="changeImage('image2.jpg')">Button 2</button>
+                <button class="button" onclick="changeImage('image3.jpg')">Button 3</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Lower Section - Videos -->
+        <div class="section">
+            <video class="media" controls id="videoPlayer">
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="buttons">
+                <button class="button" onclick="changeVideo('video1.mp4')">Button 1</button>
+                <button class="button" onclick="changeVideo('video2.mp4')">Button 2</button>
+                <button class="button" onclick="changeVideo('video3.mp4')">Button 3</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(imageSrc) {
+            const imageElement = document.querySelector('.media');
+            imageElement.src = imageSrc;
+        }
+
+        function changeVideo(videoSrc) {
+            const videoElement = document.getElementById('videoPlayer');
+            videoElement.src = videoSrc;
+            videoElement.load();
+        }
+    </script>
+</body>
+</html>
