@@ -1,3 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+</html>
+<body>
+    <header>
+    <h1>Welcome to My Website</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+</header>
+    <div class="container">
+      
+        <div class="section">
+            <img class="media" src="AirbusA321CEO.png" alt="Image 1">
+            <img class="media" src="AirbusA330-300.png" alt="Image 2">
+            <img class="media" src="AirbusA350-900.png" alt="Image 3">
+            <div class="buttons">
+                <button class="button" onclick="changeImage('image1.jpg')">Button 1</button>
+                <button class="button" onclick="changeImage('image2.jpg')">Button 2</button>
+                <button class="button" onclick="changeImage('image3.jpg')">Button 3</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <video class="media" controls id="videoPlayer">
+                <source src="video1.mp4" type="video/mp4">
+            </video>
+            <div class="buttons">
+                <button class="button" onclick="changeVideo('video1.mp4')">Button 1</button>
+                <button class="button" onclick="changeVideo('video2.mp4')">Button 2</button>
+                <button class="button" onclick="changeVideo('video3.mp4')">Button 3</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(imageSrc) {
+            const imageElement = document.querySelector('.media');
+            imageElement.src = imageSrc;
+        }
+
+        function changeVideo(videoSrc) {
+            const videoElement = document.getElementById('videoPlayer');
+            videoElement.src = videoSrc;
+            videoElement.load();
+        }
+    </script>
+    <footer>
+        <p>&copy; 2023 All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<style>
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -56,7 +122,7 @@ nav ul li {
   display: inline;
   margin-right: 20px;
 }
-
+</style>
 nav a {
   text-decoration: none;
   color: #fff;
